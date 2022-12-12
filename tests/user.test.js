@@ -1,5 +1,5 @@
-import { describe, it, assert, expect } from 'vitest'
-import { getUser } from './utils'
+import { describe, it, expect } from 'vitest'
+import { getUser } from '../src/services/index'
 
 describe('Repositories', () => {
 	it('should be able to get the current user', async () => {

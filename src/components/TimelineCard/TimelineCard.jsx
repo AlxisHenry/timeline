@@ -1,6 +1,4 @@
-import './App.css'
-
-function App() {
+function TimelineCard() {
   
   return (
     <div className="App">
@@ -10,5 +8,3 @@ function App() {
     </div>
   )
 }
-
-export default App
