@@ -1,21 +1,28 @@
 {
-  "name": "project-timeline",
+  "name": "projects-timeline",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "tests": "npx vitest",
+    "tests:watch": "npx vitest --watch",
+    "tests:ui": "npx vitest --ui"
   },
   "dependencies": {
+    "@octokit/core": "^4.1.0",
+    "dotenv": "^16.0.3",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "vitest": "^0.25.7"
   },
   "devDependencies": {
     "@types/react": "^18.0.26",
     "@types/react-dom": "^18.0.9",
     "@vitejs/plugin-react": "^3.0.0",
+    "@vitest/ui": "^0.25.7",
     "typescript": "^4.9.3",
     "vite": "^4.0.0"
   }
