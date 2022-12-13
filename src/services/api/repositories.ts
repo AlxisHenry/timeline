@@ -1,7 +1,6 @@
 import { gh } from "./constants";
 
 export const getRepositories = async (properties: {} = {}) => {
-  console.log("getRepositories", properties)
   const reponse = await gh("/users/{username}/repos", {
     username: process.env.GH_USER,
     ...properties,
