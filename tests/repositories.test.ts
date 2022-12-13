@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { getRepositories, getRepository } from '../src/services/index'
+import { getRepositories, getRepository } from '@services/api/index'
 
 describe('Repositories', () => {
 	it('should be able to get all repositories', async () => {

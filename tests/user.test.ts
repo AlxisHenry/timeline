@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest'
-import { getUser } from '../src/services/index'
+import { getUser } from '@services/api/index'
 
-describe('Repositories', () => {
+describe('Users', () => {
 	it('should be able to get the current user', async () => {
 		const [status, user] = await getUser()
 		expect(status).toBe(200)
