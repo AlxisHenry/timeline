@@ -32,11 +32,7 @@
 
 ## :star2: About the project
 
-This project is built with React and Typescript. It uses the Github API to fetch the repositories of a user and display them in a timeline.
-
-This project use : 
-	- vitejs as a bundler
-	- vitetest as a test runner
+This project is built with React and Typescript. It uses the Github API to fetch the repositories of a user and display them in a timeline. It use **Vitest** for testing and **Vite** for building.
 
 ### :space_invader: Techs
 
