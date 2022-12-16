@@ -1,8 +1,8 @@
-import { gh } from "./constants";
+import { gh } from "./index";
 
 export const getUser = async (properties: {} = {}) => {
-  const reponse = await gh("/user", {
+  const response = await gh("/user", {
     ...properties,
   });
-  return [reponse.status, reponse.data];
+  return [response.status, response.data];
 };
