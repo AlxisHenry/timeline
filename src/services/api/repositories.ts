@@ -1,3 +1,4 @@
+import { TimelineCardProps } from "src/components/TimelineCard";
 import { gh } from "./index";
 
 export const getRepositories = async (properties: {} = {}) => {
@@ -16,3 +17,15 @@ export const getRepository = async (repository: string, properties: {} = {}) => 
   });
   return [response.status, response.data];
 };
+
+export const formatRepository = (repository: object): TimelineCardProps => {
+  return {
+    repository: {
+      name: repository?.name,
+      description: repository?.description,
+      stargazers_count: repository?.stargazers_count,
+      forks_count: repository?.forks_count,
+      updated_at: repository?.updated_at,
+    }
+  };
+}

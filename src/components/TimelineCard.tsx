@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "@components/css/TimelineCard.css";
 import moment from 'moment';
 
-type TimelineCardProps = {
+export type TimelineCardProps = {
   repository: {
     name: string;
     description: string;
