@@ -1,7 +1,18 @@
 .timeline {
 	position: relative;
-	max-width: 1200px;
+	max-width: 1800px;
 	margin: 0 auto;
 	display: flex;
 	flex-direction: column;
+	gap: 8rem;
+}
+
+.timeline .timeline_title {
+	margin-top: -40px;
+}
+
+.timeline .timeline_cards {
+	display: flex;
+	flex-direction: row;
+	gap: 4rem;
 }
