@@ -1,6 +1,10 @@
 import { TimelineCardProps } from "src/components/TimelineCard";
 import { gh } from "./index";
 
+type Repository = {
+  [key: string]: any;
+};
+
 export const getRepositories = async (properties: {} = {}) => {
   const response = await gh("/users/{username}/repos", {
     username: process.env.GH_USER,
@@ -18,7 +22,7 @@ export const getRepository = async (repository: string, properties: {} = {}) => 
   return [response.status, response.data];
 };
 
-export const formatRepository = (repository: object): TimelineCardProps => {
+export const formatRepository = (repository: Repository): TimelineCardProps => {
   return {
     repository: {
       name: repository?.name,
