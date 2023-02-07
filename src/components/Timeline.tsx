@@ -26,7 +26,7 @@ const Timeline: React.FC<TimelineProps> = (props) => {
 
   useEffect(() => {
     const headers = new Headers({
-      "Authorization": `Token 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`
+      "Authorization": `Token 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`
     });
     fetch("https://api.github.com/user/repos", { headers })
       .then((response) => response.json())
