@@ -7,7 +7,8 @@ function App() {
       <Timeline 
         title="Latest repositories updated" 
         limit={10}
-        order="ASC" 
+        order="DESC"
+        token="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"
       />
     </div>
   );

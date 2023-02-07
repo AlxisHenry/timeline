@@ -3,7 +3,9 @@ import * as dotenv from "dotenv";
 
 dotenv.config();
 
-export const GH_API = new Octokit({ auth: process.env.GH_TOKEN });
+export const GH_TOKEN = process.env.GH_TOKEN;
+
+export const GH_API = new Octokit({ auth: GH_TOKEN });
 export const GH_USER = process.env.GH_USER;
 export const GH_TEST_REPOSITORY = process.env.GH_TEST_REPOSITORY;
 
