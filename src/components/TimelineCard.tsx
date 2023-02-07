@@ -16,7 +16,7 @@ export type TimelineCardProps = {
 class TimelineCard extends React.Component<TimelineCardProps> {
   render() {
     return (
-      <div className="repository-card">
+      <div className="card">
         <h3>{ this.props.repository.name }</h3>
         <p>{ this.props.repository.description }</p>
         <div className="repository-stats">

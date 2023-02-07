@@ -25,8 +25,9 @@ const Timeline: React.FC<TimelineProps> = (props) => {
   const [repos, setRepos] = useState([]);
 
   useEffect(() => {
+    console.log(import.meta.env)
     const headers = new Headers({
-      "Authorization": `Token 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`
+      "Authorization": `Token ${import.meta.env.VITE_GH_TOKEN}`
     });
     fetch("https://api.github.com/user/repos", { headers })
       .then((response) => response.json())

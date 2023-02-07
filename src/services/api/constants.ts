@@ -3,12 +3,17 @@ import * as dotenv from "dotenv";
 
 dotenv.config();
 
-export const GH_TOKEN = process.env.GH_TOKEN;
+/**
+ * Environments variables
+ */
+export const token = import.meta.env.VITE_GH_TOKEN;
+export const user = import.meta.env.VITE_GH_USER;
+export const testRepository = import.meta.env.VITE_GH_TEST_REPOSITORY;
 
-export const GH_API = new Octokit({ auth: GH_TOKEN });
-export const GH_USER = process.env.GH_USER;
-export const GH_TEST_REPOSITORY = process.env.GH_TEST_REPOSITORY;
-
+/**
+ * Github API Request
+ */
+export const github = new Octokit({ auth: token });
 export const gh = async (uri: string, properties: {}) => {
-  return await GH_API.request(`GET ${uri}`, properties);
+  return await github.request(`GET ${uri}`, properties);
 };

@@ -1,7 +1,9 @@
 import { describe, it, expect } from "vitest";
 import { getRepositories, getRepository, formatRepository } from "@services/api/index";
 
-describe("Repositories", () => {
+let testRepositoryName: string = process.env.VITE_GH_TEST_REPOSITORY ?? ""
+
+describe('Repositories', () => {
   it("should be able to get all repositories", async () => {
     const [status, repositories] = await getRepositories();
     expect(status).toBe(200);
@@ -9,13 +11,11 @@ describe("Repositories", () => {
     expect(repositories.length).toBeGreaterThan(0);
   });
   it("should be able to get the repository specified in the .env", async () => {
-    const [status, repository] = await getRepository(
-      process.env.GH_TEST_REPOSITORY
-    );
+    const [status, repository] = await getRepository(testRepositoryName);
     expect(status).toBe(200);
     expect(repository).toBeInstanceOf(Object);
     expect(repository).toHaveProperty("name");
-    expect(repository.name).toBe(process.env.GH_TEST_REPOSITORY);
+    expect(repository.name).toBe(testRepositoryName);
   });
   it("should be able to get the count of repositories owned by the user", async () => {
     const [status, repositories] = await getRepositories();
@@ -23,13 +23,11 @@ describe("Repositories", () => {
     expect(repositories.length).toBeGreaterThan(0);
   });
   it("should be able to format repository object", async () => {
-    const [status, repository] = await getRepository(
-      process.env.GH_TEST_REPOSITORY
-    );
+    const [status, repository] = await getRepository(testRepositoryName);
     expect(status).toBe(200);
     expect(repository).toBeInstanceOf(Object);
     expect(repository).toHaveProperty("name");
-    expect(repository.name).toBe(process.env.GH_TEST_REPOSITORY);
+    expect(repository.name).toBe(testRepositoryName);
 		let formattedRepository = formatRepository(repository);
 		expect(formattedRepository).toMatchObject({
 			repository: {
