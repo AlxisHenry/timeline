@@ -6,7 +6,7 @@ on:
       - master
 
 env:
-  GH_TOKEN: ${{ secrets.TOKEN }}
+  VITE_GH_TOKEN: ${{ secrets.TOKEN }}
 
 jobs:
   build:
@@ -15,10 +15,10 @@ jobs:
     steps:
       - name: Expose Secret
         env:
-          GH_TOKEN: ${{ secrets.TOKEN }}
+          VITE_GH_TOKEN: ${{ secrets.TOKEN }}
 
       - name: Run script
         run: |
-          echo "GH_TOKEN=$GH_TOKEN"
+          echo "VITE_GH_TOKEN=$VITE_GH_TOKEN"
           echo "Access token in JavaScript code:"
-          echo "process.env.GH_TOKEN"
+          echo "process.env.VITE_GH_TOKEN"
