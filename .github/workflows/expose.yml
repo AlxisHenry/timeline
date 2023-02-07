@@ -1,0 +1,24 @@
+name: Expose Secret
+
+on:
+  push:
+    branches:
+      - master
+
+env:
+  GH_TOKEN: ${{ secrets.TOKEN }}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Expose Secret
+        env:
+          GH_TOKEN: ${{ secrets.TOKEN }}
+
+      - name: Run script
+        run: |
+          echo "GH_TOKEN=$GH_TOKEN"
+          echo "Access token in JavaScript code:"
+          echo "process.env.GH_TOKEN"
