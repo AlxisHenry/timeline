@@ -36,6 +36,8 @@
 
 This project is built with React and Typescript. It uses the Github API to fetch the repositories of a user and display them in a timeline. It use **Vitest** for testing and **Vite** for building.
 
+[![Deploy to GitHub Pages](https://github.com/AlxisHenry/timeline/actions/workflows/deploy-gh-pages.yml/badge.svg?branch=master)](https://github.com/AlxisHenry/timeline/actions/workflows/deploy-gh-pages.yml)
+
 ### :space_invader: Techs
 
 [![Typescript](https://img.shields.io/badge/typescript%20-%23323330.svg?&style=for-the-badge&logo=typescript&logoColor=3178C6&color=gray)]()
