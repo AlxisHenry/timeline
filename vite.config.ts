@@ -13,6 +13,8 @@ export default defineConfig({
     }
   },
   define: {
-    global: {}
+    global: {
+      BASE_URL: "https://alxishenry.github.io/timeline/"
+    }
   }
 });
