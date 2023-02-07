@@ -3,7 +3,7 @@
 <div align="center">
 
   <img src="https://cdn.alexishenry.eu/shared/images/logo.png" alt="logo" width="220" height="auto" />
-  <h1>timeline.alexishenry.eu</h1>
+  <h1>Github Timeline</h1>
   
   <p>
     Github repositories timeline made with :heart:
@@ -27,8 +27,10 @@
 - [About the project](#star2-about-the-project)
   * [Techs](#space_invader-techs)
 - [Getting Started](#toolbox-getting-started)
-  * [Installation](#gear-setup)
-- [Authors](#wave-authors)
+  * [:gear: Setup](#gear-setup)
+  * [:gear: Configuration](#gear-config)
+  * [:test\_tube: Tests](#test_tube-tests)
+- [Contributors](#wave-authors)
 
 ## :star2: About the project
 
@@ -47,11 +49,41 @@ This project is built with React and Typescript. It uses the Github API to fetch
 
 **Clone the repository**
 
-```
-  git clone https://github.com/AlxisHenry/timeline.git
+```bash
+$ git clone https://github.com/AlxisHenry/timeline.git
 ```
 
-## :wave: Authors
+### :gear: Configuration
+
+**Configure github credentials**
+
+```diff
+- GH_TOKEN=<your_github_token>
+- GH_USER=<your_github_username>
+- GH_TEST_REPOSITORY=<your_github_test_repo>
++ GH_TOKEN=<your_github_token>
++ GH_USER=alxishenry
++ GH_TEST_REPOSITORY=alexishenry.eu
+```
+
+**Configure Github token in Timeline component**
+
+*Go to src\components\Timeline.tsx and edit line 24.*
+
+```diff
+- "Authorization": `Token <your_github_token>`
++ "Authorization": `Token <your_github_token>`
+```
+
+### :test_tube: Tests
+
+**Run tes tests using the following command :**
+
+```bash
+$ npm run tests || npx vitest
+```
+
+## :wave: Contributors
 
 * **Alexis Henry** _alias_ [@AlxisHenry](https://github.com/AlxisHenry)
 
