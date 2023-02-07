@@ -13,6 +13,11 @@ type TimelineProps = {
 };
 
 type Repository = {
+  id: number;
+  name: string;
+  description: string;
+  stargazers_count: number;
+  forks_count: number;
   updated_at: string;
 }
 
@@ -29,7 +34,6 @@ const Timeline: React.FC<TimelineProps> = (props) => {
       .catch((error) => console.error(error));
   }, []);
 
-  
   const repositories = repos.sort((a: Repository, b: Repository) => {
     const dateA = new Date(a.updated_at);
     const dateB = new Date(b.updated_at);
@@ -48,8 +52,8 @@ const Timeline: React.FC<TimelineProps> = (props) => {
         <h2>{props.title}</h2>
       </div>
       <div className="timeline_cards">
-        {repositories.map((repository) => (
-          <TimelineCard key={repository?.id} repository={repository} />
+        {repositories.map((repository: Repository) => (
+          <TimelineCard key={repository.id} repository={repository} />
         ))}
       </div>
     </div>

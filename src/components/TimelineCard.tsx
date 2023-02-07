@@ -4,6 +4,7 @@ import moment from 'moment';
 
 export type TimelineCardProps = {
   repository: {
+    id: number;
     name: string;
     description: string;
     stargazers_count: number;

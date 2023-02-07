@@ -25,6 +25,7 @@ export const getRepository = async (repository: string, properties: {} = {}) => 
 export const formatRepository = (repository: Repository): TimelineCardProps => {
   return {
     repository: {
+      id: repository?.id,
       name: repository?.name,
       description: repository?.description,
       stargazers_count: repository?.stargazers_count,
