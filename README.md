@@ -12,7 +12,7 @@
 <a href="https://alxishenry.github.io/docs"><strong>Documentation »</strong></a>
 
 <h4>
-    <a href="https://timeline.alexishenry.eu">Go to the site</a>
+    <a href="https://alxishenry.github.io/timeline/">Go to the site</a>
   <span> · </span>
     <a href="https://github.com/AlxisHenry/timeline/issues">Report a bug</a>
   <span> · </span>
@@ -57,24 +57,12 @@ $ git clone https://github.com/AlxisHenry/timeline.git
 
 ### :gear: Configuration
 
-**Configure github credentials**
+**Configure your github credentials**
 
 ```diff
 - GH_TOKEN=<your_github_token>
 - GH_USER=<your_github_username>
 - GH_TEST_REPOSITORY=<your_github_test_repo>
-+ GH_TOKEN=<your_github_token>
-+ GH_USER=alxishenry
-+ GH_TEST_REPOSITORY=alexishenry.eu
-```
-
-**Configure Github token in Timeline component**
-
-*Go to src\components\Timeline.tsx and edit line 24.*
-
-```diff
-- "Authorization": `Token <your_github_token>`
-+ "Authorization": `Token <your_github_token>`
 ```
 
 ### :test_tube: Tests
@@ -82,13 +70,11 @@ $ git clone https://github.com/AlxisHenry/timeline.git
 **Run tes tests using the following command :**
 
 ```bash
-$ npm run tests || npx vitest
+$ npm run tests
 ```
 
 ## :wave: Contributors
 
 * **Alexis Henry** _alias_ [@AlxisHenry](https://github.com/AlxisHenry)
-
-<!-- ## :page_with_curl: Liens utiles -->
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
