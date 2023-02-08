@@ -37,7 +37,7 @@ jobs:
     - name: Test API Request
       run: |
          response=$(curl -H "Authorization: token $VITE_GH_TOKEN" https://api.github.com/user)
-         echo "API Response: ${response}"
+         echo "API Response : ${response}"
         
     - name: Deploy to GitHub Pages
       uses: JamesIves/github-pages-deploy-action@releases/v3
