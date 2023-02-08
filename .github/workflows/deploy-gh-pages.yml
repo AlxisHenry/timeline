@@ -28,7 +28,7 @@ jobs:
       run: npm run build
       
     - name: Configure repository secrets
-      run: echo "::set-env name=VITE_GH_TOKEN::${{secrets.TOKEN}}"
+      run: echo "::set-env name=VITE_GH_TOKEN::${{secrets.TIMELINE}}"
 
     - name: Deploy to GitHub Pages
       uses: JamesIves/github-pages-deploy-action@releases/v3
