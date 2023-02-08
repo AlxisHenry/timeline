@@ -27,8 +27,8 @@ jobs:
     - name: Build the app
       run: npm run build
       
-    - name: Configure environment secrets
-      run: echo "The github API token is : ${{secrets.TOKEN}}"
+    - name: Configure repository secrets
+      run: echo "Secret token is ${{secrets.TIMELINE}}"
 
     - name: Deploy to GitHub Pages
       uses: JamesIves/github-pages-deploy-action@releases/v3
