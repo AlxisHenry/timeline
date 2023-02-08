@@ -8,7 +8,6 @@ function App() {
         title="Latest repositories updated" 
         limit={10}
         order="DESC"
-        token=""
       />
     </div>
   );

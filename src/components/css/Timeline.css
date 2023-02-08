@@ -1,22 +1,6 @@
 .timeline {
-	position: relative;
-	max-width: 100vw;
-	margin: 0 auto;
 	display: flex;
 	flex-direction: column;
-	gap: 8rem;
-	max-height: 600px;
-	height: 600px;
-}
-
-.timeline .timeline_cards {
-	width: 80vw;
-	display: flex;
-	overflow-x: scroll;
-	flex-direction: row;
-	gap: 4rem;
-	white-space: nowrap;
-	max-height: 100%;
-	max-height: 300px;
-	height: 100%;
+	gap: 6rem;
+	margin-top: 125px;
 }

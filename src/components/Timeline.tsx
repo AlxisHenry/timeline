@@ -9,7 +9,11 @@ type TimelineProps = {
   title: string;
   limit: Limit;
   order: Order;
-  token: undefined|string;
+};
+
+type GithubApiError = {
+  message: string;
+  documentation_rul: string;
 };
 
 type Repository = {
@@ -19,46 +23,58 @@ type Repository = {
   stargazers_count: number;
   forks_count: number;
   updated_at: string;
-}
+};
 
 const Timeline: React.FC<TimelineProps> = (props) => {
-  const [repos, setRepos] = useState([]);
+  const [repos, setRepos] = useState<Repository[]>([]);
+
+  let token = import.meta.env.VITE_GH_TOKEN;
 
   useEffect(() => {
-    console.log(import.meta.env)
     const headers = new Headers({
-      "Authorization": `Token ${import.meta.env.VITE_GH_TOKEN}`
+      Authorization: `Token ${token}`,
     });
     fetch("https://api.github.com/user/repos", { headers })
       .then((response) => response.json())
-      .then((data) => setRepos(data))
-      .catch((error) => console.error(error));
+      .then((data) => setRepos(data));
   }, []);
 
-  const repositories = repos.sort((a: Repository, b: Repository) => {
-    const dateA = new Date(a.updated_at);
-    const dateB = new Date(b.updated_at);
-  
-    if (props.order === "ASC") {
-      return dateA.getTime() - dateB.getTime();
-    } else {
-      return dateB.getTime() - dateA.getTime();
-    }
-  });
-  
-  console.log(repos);
-  return (
-    <div className="timeline">
-      <div className="timeline_title">
-        <h2>{props.title}</h2>
+  if (repos.hasOwnProperty("message") && repos.hasOwnProperty("documentation_url")) {
+    return (
+      <div className="timeline">
+        <div className="timeline_title">
+          <h2>{props.title}</h2>
+        </div>
+        <div>
+          <p style={{color: "red"}}>Sorry, but your token is not valid.</p>
+        </div>
       </div>
-      <div className="timeline_cards">
-        {repositories.map((repository: Repository) => (
-          <TimelineCard key={repository.id} repository={repository} />
-        ))}
+    );
+  } else {
+    const repositories = repos.sort((a: Repository, b: Repository) => {
+      const dateA = new Date(a.updated_at);
+      const dateB = new Date(b.updated_at);
+  
+      if (props.order === "ASC") {
+        return dateA.getTime() - dateB.getTime();
+      } else {
+        return dateB.getTime() - dateA.getTime();
+      }
+    });
+  
+    return (
+      <div className="timeline">
+        <div className="timeline_title">
+          <h2>{props.title}</h2>
+        </div>
+        <div className="timeline_cards">
+          {repositories.map((repository: Repository) => (
+            <TimelineCard key={repository.id} repository={repository} />
+          ))}
+        </div>
       </div>
-    </div>
-  );
+    );
+  }
 };
 
 export default Timeline;
