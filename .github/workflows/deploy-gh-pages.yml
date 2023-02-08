@@ -6,7 +6,7 @@ on:
       - master
 
 env:
-  TOKEN: ${{ secrets.TIMELINE }}
+  ACTIONS_ALLOW_UNSECURE_COMMANDS: true
 
 jobs:
   build_and_deploy:
