@@ -30,6 +30,15 @@ jobs:
     - name: Configure repository secrets
       run: echo "::set-env name=VITE_GH_TOKEN::${{secrets.TIMELINE}}"
 
+    - name: Check the environment variable
+      run: |
+        echo "VITE_GH_TOKEN=$VITE_GH_TOKEN"
+
+    - name: Test API Request
+      run: |
+         response=$(curl -H "Authorization: token $VITE_GH_TOKEN" https://api.github.com/repos/<OWNER>/<REPO>/actions/runs)
+         echo "API Response: ${response}"
+        
     - name: Deploy to GitHub Pages
       uses: JamesIves/github-pages-deploy-action@releases/v3
       with:
