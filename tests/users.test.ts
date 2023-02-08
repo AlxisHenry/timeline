@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { getUser } from '@services/api/index'
+import { getUser } from '@services/api'
 
 let username: string = process.env.VITE_GH_USER ?? ""
 

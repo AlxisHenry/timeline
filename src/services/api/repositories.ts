@@ -17,7 +17,7 @@ export const getRepositories = async (properties: {} = {}) => {
 export const getRepository = async (repository: string, properties: {} = {}) => {
   const response = await gh("/repos/{owner}/{repo}", {
     owner: user,
-    repo: testRepository,
+    repo: repository,
     ...properties,
   });
   return [response.status, response.data];

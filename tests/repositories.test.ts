@@ -1,7 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { getRepositories, getRepository, formatRepository } from "@services/api/index";
-
-let testRepositoryName: string = process.env.VITE_GH_TEST_REPOSITORY ?? ""
+import { testRepository, getRepositories, getRepository, formatRepository } from "@services/api";
 
 describe('Repositories', () => {
   it("should be able to get all repositories", async () => {
@@ -11,11 +9,11 @@ describe('Repositories', () => {
     expect(repositories.length).toBeGreaterThan(0);
   });
   it("should be able to get the repository specified in the .env", async () => {
-    const [status, repository] = await getRepository(testRepositoryName);
+    const [status, repository] = await getRepository(testRepository);
     expect(status).toBe(200);
     expect(repository).toBeInstanceOf(Object);
     expect(repository).toHaveProperty("name");
-    expect(repository.name).toBe(testRepositoryName);
+    expect(repository.name).toBe(testRepository);
   });
   it("should be able to get the count of repositories owned by the user", async () => {
     const [status, repositories] = await getRepositories();
@@ -23,11 +21,11 @@ describe('Repositories', () => {
     expect(repositories.length).toBeGreaterThan(0);
   });
   it("should be able to format repository object", async () => {
-    const [status, repository] = await getRepository(testRepositoryName);
+    const [status, repository] = await getRepository(testRepository);
     expect(status).toBe(200);
     expect(repository).toBeInstanceOf(Object);
     expect(repository).toHaveProperty("name");
-    expect(repository.name).toBe(testRepositoryName);
+    expect(repository.name).toBe(testRepository);
 		let formattedRepository = formatRepository(repository);
 		expect(formattedRepository).toMatchObject({
 			repository: {
