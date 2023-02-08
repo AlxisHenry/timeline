@@ -11,10 +11,5 @@ export default defineConfig({
       "@services": path.resolve(__dirname, "src/services"),
       "@components": path.resolve(__dirname, "src/components"),
     }
-  },
-  define: {
-    global: {
-      BASE_URL: "https://alxishenry.github.io/timeline/"
-    }
   }
 });
