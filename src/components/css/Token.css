@@ -1,0 +1,19 @@
+.token {
+	width: 100%;
+}
+
+.token .form {
+	display: flex;
+	flex-direction: column;
+	text-align: start;
+	gap: 18px;
+}
+
+.token .form label {
+	font-size: 20px;
+}
+
+.token .form input {
+	padding: 12px;
+	border-radius: 5px;
+}

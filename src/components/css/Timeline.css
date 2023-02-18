@@ -1,6 +1,7 @@
 .timeline {
 	display: flex;
+	justify-content: start;
 	flex-direction: column;
 	gap: 6rem;
-	margin-top: 50px;
+	align-items: center;
 }

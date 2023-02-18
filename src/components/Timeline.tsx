@@ -1,6 +1,7 @@
 import React, { Component, useState, useEffect } from "react";
 import TimelineCard from "./TimelineCard";
 import "@components/css/Timeline.css";
+import Token from "./Token";
 
 type Limit = 5 | 10 | 15;
 type Order = "ASC" | "DESC";
@@ -9,11 +10,6 @@ type TimelineProps = {
   title: string;
   limit: Limit;
   order: Order;
-};
-
-type GithubApiError = {
-  message: string;
-  documentation_rul: string;
 };
 
 type Repository = {
@@ -30,6 +26,10 @@ const Timeline: React.FC<TimelineProps> = (props) => {
 
   let token = import.meta.env.VITE_GH_TOKEN;
 
+  if (!token) {
+    token = localStorage.getItem("token")
+  }
+
   useEffect(() => {
     const headers = new Headers({
       Authorization: `Token ${token}`,
@@ -44,6 +44,7 @@ const Timeline: React.FC<TimelineProps> = (props) => {
       <div className="timeline">
         <div className="timeline_title">
           <h2>{props.title}</h2>
+          <Token/>
         </div>
         <div>
           <p style={{color: "red"}}>Sorry, but your token is not valid.</p>
