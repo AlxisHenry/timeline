@@ -2,11 +2,10 @@
 
 <div align="center">
 
-  <img src="https://cdn.alexishenry.eu/shared/images/logo.png" alt="logo" width="220" height="auto" />
-  <h1>Github Timeline</h1>
+  <h1>Github Repository Timeline</h1>
   
   <p>
-    Github repositories timeline made with :heart:
+    Github repositories updates timeline made with :heart:
   </p>
 
 <a href="https://alxishenry.github.io/docs"><strong>Documentation »</strong></a>
